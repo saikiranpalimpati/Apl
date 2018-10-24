@@ -1,0 +1,44 @@
+/*
+NAME: SAIKIRAN PALIMPATI
+COURSE: ADVANCED PROGRAMMING LANGUAGES
+ASSIGNMENT 2
+
+In the following prolog code there are set of facts where each players
+designation(batsmen, bowler or wicket keeper) is given, a team to which
+he belongs is given team(India) and current for is given with
+player_info.
+In the set of rules players current form is directly related to
+player_info, players job to designation, ream contains to team and
+finally to check wether the player belongs to the country or not.
+*/
+designation(rohith,batsmen).
+designation(kohli,batsmen).
+designation(utappa,batsmen).
+designation(pandya,batsmen).
+designation(kaif,batsmen).
+
+designation(nehra,bowler).
+designation(bumrah,bowler).
+designation(irfan,bowler).
+designation(malinga,bowler).
+designation(dhoni,wicketkeeper).
+
+team(batsmen,india).
+team(bowler,india).
+team(wicketkeeper,india).
+
+player_info(rohith,inform).
+player_info(kohi,inform).
+player_info(utappa,outform).
+player_info(pandya,inform).
+player_info(kaif,outform).
+player_info(nehra,outform).
+player_info(dhoni,inform).
+
+
+players_currentForm(X,Y):-player_info(X,Y).
+
+
+players_job(X,Y):-designation(X,Y).
+team_contains(X,Y):-team(X,Y).
+players_country(X,Y):-players_job(X,Z),team_contains(Z,Y).
