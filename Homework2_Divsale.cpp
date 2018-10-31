@@ -6,16 +6,16 @@ DivSales::DivSales()
 {
 	for (int i = 0; i < 4; i++)
 	{
-		array[i] = 0;
+		salesForDivision[i] = 0;
 	}
 }
 
 void DivSales::quarterlySales(double first, double second, double third, double fourth)
 {
-	array[0] = first;
-	array[1] = second;
-	array[2] = third;
-	array[3] = fourth;
+	salesForDivision[0] = first;
+	salesForDivision[1] = second;
+	salesForDivision[2] = third;
+	salesForDivision[3] = fourth;
 	double sum = first + second + third + fourth;
 	totalsales += sum;
 
@@ -24,9 +24,9 @@ void DivSales::quarterlySales(double first, double second, double third, double 
 double * DivSales::quarterlySales()
 {
 
-	return array;
+	return salesForDivision;
 }
-
+/*
 double DivSales::returnParticularsales(int i)
 {
 	double sales;
@@ -40,7 +40,7 @@ double DivSales::returnParticularsales(int i)
 	}
 	return sales;
 }
-
+*/
 
 DivSales::~DivSales()
 {
